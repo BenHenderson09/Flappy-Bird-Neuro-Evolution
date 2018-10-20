@@ -2,12 +2,12 @@
 This program is a implementation of the popular FlappyBird mobile game, but played by an ai. It uses a NeuroEvolution algorithm,
 a combination of neural networks and a genetic algorithm.
 
-### Program Details
+## Program Details
 - Made from scratch with Processing, no machine learning libraries
 - Variable population size, mutation rate and number of pipes
 - Includes a version made for users to play, (FlappyBird_Player)
 
-### Brief NeuroEvolution explanation
+## Brief NeuroEvolution explanation
 NeuroEvolution is made up of two main algorithms, Artificial Neural Networks (ANN) and Genetic Algorithms(GA). The neural networks are
 inspired by the structure of the human brain, they can take in the inputs of the bird's position, the pipe width, etc and form 
 an output. With this output between -1 and 1, a decision can be made about the bird's next action, so if the output is greater than zero
