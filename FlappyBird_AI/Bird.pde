@@ -7,11 +7,11 @@ class Bird{
   PVector size;
   float gravity = 0.5;
   float jumpPower = 0.3;
-  float speed = 0;
+  float speed;
   
   boolean dead = false;
   boolean best = false;
-  float fitness = 0;
+  float fitness;
   
   Bird(){
      sprite = loadImage("bird.png");

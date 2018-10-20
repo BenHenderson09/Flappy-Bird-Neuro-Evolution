@@ -21,5 +21,5 @@ badly. It will then use a selection algorithm to find the fittest birds to form 
 
 This, however, does not work very well. The "children" are simply copying their parents exactly, there is no natural change in genetics.
 This is where mutation comes in. Firstly a mutation rate, or probability, is defined. This mutation rate is the probability that a weight
-in the child's neural network will be changed. Then the program loops through each weight in the netwok and changes a percentage of weights. This performs the mutation needed for the bird's to stumble upon new ways to improve their score, this is the main function
+in the child's neural network will be changed. Then the program loops through each weight in the network and changes a percentage of weights. This performs the mutation needed for the bird's to stumble upon new ways to improve their score, this is the main function
 of a genetic algorithm.

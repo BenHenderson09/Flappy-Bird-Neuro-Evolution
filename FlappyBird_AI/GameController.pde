@@ -2,9 +2,9 @@ class GameController{
   Population pop;
   PipeController pipes;
   
-  int score = 0;
-  int bestScore = 0;
-  int birds = 0;
+  int score;
+  int bestScore;
+  int birds;
   int generation = 1;
   
   GameController(Population pop, PipeController pipes){

@@ -2,7 +2,7 @@
 PVector WINDOW_SIZE = new PVector(1500,800);
 color BG = color(87, 199, 200);
 int FPS  = 20;
-int PIPES = 50;
+int PIPES = 100;
 
 // Game objects
 GameController gameController;

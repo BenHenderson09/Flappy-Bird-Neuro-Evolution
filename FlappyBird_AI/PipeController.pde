@@ -54,8 +54,8 @@ class PipeController{
   
   void movePipes(){
     for (int i = 0; i < numberOfPipes; i++){
-      topPipes[i].pos.x -= 4;
-      bottomPipes[i].pos.x -= 4;
+      topPipes[i].pos.x -= 3.5;
+      bottomPipes[i].pos.x -= 3.5;
     }
   }
   
@@ -94,7 +94,7 @@ class PipeController{
     // Bottom pipe collision
     for (int i = 0; i < bottomPipes.length; i++){
       if (bird.pos.x+bird.size.x > bottomPipes[i].pos.x && bird.pos.x < bottomPipes[i].pos.x+bottomPipes[i].wid){ // If inside x boundaries
-          if (bird.pos.y+bird.size.y-10 > bottomPipes[i].pos.y && bird.pos.y < bottomPipes[i].pos.y+bottomPipes[i].len){
+          if (bird.pos.y+bird.size.y-20 > bottomPipes[i].pos.y && bird.pos.y < bottomPipes[i].pos.y+bottomPipes[i].len){
           return true;
         }
       }
