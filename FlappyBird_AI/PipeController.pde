@@ -1,0 +1,105 @@
+class PipeController{
+  GameController gc;
+  
+  int numberOfPipes = 20;
+  Pipe[] bottomPipes;
+  Pipe[] topPipes;
+  
+  float columnPos = width/2; // What x position to put the pipes in
+  int currentPipe; // The pipe the bird is facing
+
+  PipeController(int numberOfPipes){
+    this.numberOfPipes = numberOfPipes;
+  }
+
+  void setController(GameController gc){
+    this.gc = gc;
+  }
+
+  void generatePipes(){
+    bottomPipes = new Pipe[numberOfPipes];
+    topPipes = new Pipe[numberOfPipes];
+    
+    // Initialize top pipe positions
+    for (int i = 0; i < topPipes.length; i++){
+      topPipes[i] = new Pipe();
+      topPipes[i].len = random(100,height-300);
+      topPipes[i].pos = new PVector(columnPos, 0);
+      topPipes[i].setSprite("topPipe.png");
+      columnPos += 400;
+    }
+    columnPos = width/2; // Reset column position
+    
+    // Initialize bottom pipe positions
+    for (int i = 0; i < bottomPipes.length; i++){
+      bottomPipes[i] = new Pipe();
+      bottomPipes[i].len = height-topPipes[i].len-200; // pipe gap
+      bottomPipes[i].pos = new PVector(columnPos, height-bottomPipes[i].len);
+      bottomPipes[i].setSprite("bottomPipe.png");
+      columnPos += 400;
+    }
+  }
+  
+  void showPipes(){
+    // Show all top pipes
+    for (int i = 0; i < topPipes.length; i++){
+      topPipes[i].spawn();
+    }
+    
+    // Show all bottom pipes
+    for (int i = 0; i < topPipes.length; i++){
+      bottomPipes[i].spawn();
+    }
+  }
+  
+  void movePipes(){
+    for (int i = 0; i < numberOfPipes; i++){
+      topPipes[i].pos.x -= 4;
+      bottomPipes[i].pos.x -= 4;
+    }
+  }
+  
+  void updatePipes(){
+    for (int i = 0; i < gc.pop.birds.length; i++){
+      if (collision(gc.pop.birds[i])){
+        gc.pop.birds[i].dead = true;
+      }
+    }
+    
+    setScore();
+    movePipes();
+    showPipes();
+  }
+  
+  void setScore(){
+    for (int i = 0; i < gc.pop.birds.length; i++){
+      if (gc.pop.birds[i].pos.x > bottomPipes[currentPipe].pos.x+10 && !gc.pop.birds[i].dead){
+             gc.score += 1;
+             currentPipe++;
+             break;
+         }  
+      }
+   }
+  
+  boolean collision(Bird bird){
+    // Top pipe collision
+    for (int i = 0; i < topPipes.length; i++){
+      if (bird.pos.x+bird.size.x > topPipes[i].pos.x && bird.pos.x < topPipes[i].pos.x+topPipes[i].wid){ // If inside x boundaries
+          if (bird.pos.y > topPipes[i].pos.y && bird.pos.y+15 < topPipes[i].pos.y+topPipes[i].len){
+          return true;
+        }
+      }
+    }
+    
+    // Bottom pipe collision
+    for (int i = 0; i < bottomPipes.length; i++){
+      if (bird.pos.x+bird.size.x > bottomPipes[i].pos.x && bird.pos.x < bottomPipes[i].pos.x+bottomPipes[i].wid){ // If inside x boundaries
+          if (bird.pos.y+bird.size.y-10 > bottomPipes[i].pos.y && bird.pos.y < bottomPipes[i].pos.y+bottomPipes[i].len){
+          return true;
+        }
+      }
+    }
+    
+    return false;
+  }
+}
