@@ -23,3 +23,9 @@ This, however, does not work very well. The "children" are simply copying their 
 This is where mutation comes in. Firstly a mutation rate, or probability, is defined. This mutation rate is the probability that a weight
 in the child's neural network will be changed. Then the program loops through each weight in the network and changes a percentage of weights. This performs the mutation needed for the bird's to stumble upon new ways to improve their score, this is the main function
 of a genetic algorithm.
+
+## Usage
+To use the program there are two choices, you can either play the game yourself, or you can use the ai.
+- To play the game yourself, just open the "FlappyBird_Player" folder and open the sketch with the Processing IDE. To play simply use the up arrow to jump.
+- To view the ai in action, just open the "FlappyBird_AI" folder and open the sketch with the Processing IDE.
+	
