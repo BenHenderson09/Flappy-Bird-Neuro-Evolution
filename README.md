@@ -30,3 +30,6 @@ To use the program there are two choices, you can either play the game yourself,
 - To play the game yourself, just open the "FlappyBird_Player" folder and open the sketch with the Processing IDE. To play simply use the up arrow to jump.
 - To view the ai in action, just open the "FlappyBird_AI" folder and open the sketch with the Processing IDE.
 	
+## Images
+![Start](/Images/start.png)
+![Learning](/Images/learning.png)
