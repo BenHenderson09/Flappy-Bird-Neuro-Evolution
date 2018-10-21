@@ -6,6 +6,7 @@ a combination of neural networks and a genetic algorithm.
 - Made from scratch with Processing, no machine learning libraries
 - Variable population size, mutation rate and number of pipes
 - Includes a version made for users to play, (FlappyBird_Player)
+- Supports deep NeuroEvoluion with dynamically structured neural network class
 
 ## Brief NeuroEvolution explanation
 NeuroEvolution is made up of two main algorithms, Artificial Neural Networks (ANN) and Genetic Algorithms(GA). The neural networks are
